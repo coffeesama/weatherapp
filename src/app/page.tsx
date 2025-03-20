@@ -1,8 +1,8 @@
 "use client";
-import SearchBar from "@/components/searchBar";
-import MiniCards from "@/components/miniCards";
-import Weather from "@/components/weather";
-import { useWeather } from "../contexts/weatherContext";
+import SearchBar from "@/components/searchBar.component";
+import MiniCards from "@/components/miniCards.component";
+import Weather from "@/components/weather.component";
+import { useWeather } from "../contexts/weatherContext.context";
 import { Inter, Instrument_Serif } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight

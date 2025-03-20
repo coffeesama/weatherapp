@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useWeather } from "../contexts/weatherContext";
+import { useWeather } from "../contexts/weatherContext.context";
 
 function formatUnixTimestamp(timestamp: any) {
   const date = new Date(timestamp * 1000);

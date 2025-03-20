@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { WeatherProvider } from "@/contexts/weatherContext";
+import { WeatherProvider } from "@/contexts/weatherContext.context";
 
 export const metadata: Metadata = {
   title: "Weather Application",

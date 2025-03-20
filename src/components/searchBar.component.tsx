@@ -1,5 +1,5 @@
 "use client";
-import { useWeather } from "../contexts/weatherContext";
+import { useWeather } from "../contexts/weatherContext.context";
 import Image from "next/image";
 
 export default function SearchBar() {

@@ -7,7 +7,7 @@ import {
   useEffect,
 } from "react";
 import { WeatherData } from "@/models/weatherdata.model";
-import { getWeatherData } from "@/app/actions";
+import { getWeatherData } from "@/actions/actions.action";
 
 interface WeatherContextType {
   weather: WeatherData | null;
