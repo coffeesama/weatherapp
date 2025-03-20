@@ -4,6 +4,10 @@ import { useWeather } from "../contexts/weatherContext.context";
 
 function formatUnixTimestamp(timestamp: any) {
   const date = new Date(timestamp * 1000);
+
+  if (date.toLocaleDateString() == "Invalid Date") {
+    return "";
+  }
   return date.toLocaleTimeString("tr-TR", {
     hour: "2-digit",
     minute: "2-digit",
@@ -17,7 +21,7 @@ export default function MiniCards() {
     <div className="w-[800px] h-max flex flex-col gap-[40px] justify-center items-center">
       {/* Cards Section Start */}
       <div className="top">
-        <div className="w-max h-max flex flex-row items-center justify-center gap-[30px] md:gap-[100px] lg:gap-[150px]">
+        <div className="w-max h-max flex flex-row items-center justify-center gap-[30px] md:gap-[80px] lg:gap-[100px]">
           {/* Temperature Card Start */}
           <div className="w-[75px] h-max flex flex-col items-center justify center gap-[3px]">
             <Image
@@ -70,7 +74,7 @@ export default function MiniCards() {
         </div>
       </div>
       <div className="bottom">
-        <div className="w-max h-max flex flex-row items-center justify-center gap-[150px]">
+        <div className="w-max h-max flex flex-row items-center justify-center gap-[80px]">
           {/* Sunrise Card Start */}
           <div className="w-[75px] h-max flex flex-col items-center justify center gap-[3px]">
             <Image
@@ -89,7 +93,7 @@ export default function MiniCards() {
           </div>
           {/* Sunrise Card End */}
           {/* Sunset Card Start */}
-          <div className="w-[75px] h-max flex flex-col items-center justify center gap-[3px]">
+          <div className="w-[75px] h-max flex flex-col items-center justify-center gap-[3px]">
             <Image
               src="/sunset.png"
               alt="Sunset"
