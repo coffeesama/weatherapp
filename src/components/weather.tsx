@@ -26,6 +26,28 @@ export default function Weather() {
           <div className="w-max h-max text-[20px] text-white font-light text-center">
             3°C
           </div>
+          <div className="w-max h-max text-[12px] text-white font-extralight text-center flex flex-col justify-center items-center">
+            <div className="up flex gap-1">
+              8°C
+              <Image
+                src="/uparrow.png"
+                alt="uparrow"
+                width={200}
+                height={200}
+                className="w-[10px] h-[10px]"
+              />
+            </div>
+            <div className="down flex gap-1">
+              1°C
+              <Image
+                src="/downarrow.png"
+                alt="downarrow"
+                width={200}
+                height={200}
+                className="w-[10px] h-[10px]"
+              />
+            </div>
+          </div>
         </div>
       </div>
       {/* Weather Name Section End */}
