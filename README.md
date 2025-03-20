@@ -43,7 +43,10 @@ pnpm install
 bun install
 ```
 
-### 3. Run the Development Server
+### 3. Set Up Environment Variables
+Rename the `.env.example` file to `.env` and fill in the required API keys and configuration settings. This file contains environment-specific variables such as API keys for fetching weather data.
+
+### 4. Run the Development Server
 ```bash
 npm run dev
 # or
@@ -90,3 +93,4 @@ This project is open-source and available under the **MIT License**.
 ---
 
 Made with ❤️ using Next.js.
+
