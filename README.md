@@ -5,28 +5,16 @@ This is a **weather application** built using [Next.js](https://nextjs.org). The
 ## Preview
 
 ### Desktop View
-<<<<<<< HEAD
-
-=======
->>>>>>> ab72d8aac2c82ae0a78ba0226d8fcd5092667d51
 ![Demo](https://github.com/user-attachments/assets/dca4ae0a-2a0b-4214-bc7a-64e1325a29bd)
 ![Demo Error](https://github.com/user-attachments/assets/5d264b8c-888c-4113-a308-c70870cb0de7)
 
 ### Mobile View
-<<<<<<< HEAD
-
-=======
->>>>>>> ab72d8aac2c82ae0a78ba0226d8fcd5092667d51
 ![Demo Phone](https://github.com/user-attachments/assets/ffd3d494-d935-42fc-88ba-bfc3e5eafd8b)
 ![Demo Error Phone](https://github.com/user-attachments/assets/2cd77a62-ccf2-4f6d-8df6-4874b76acadb)
 
 ---
 
 ## Features
-<<<<<<< HEAD
-
-=======
->>>>>>> ab72d8aac2c82ae0a78ba0226d8fcd5092667d51
 - **Real-time Weather Data**: Fetches live weather updates based on user input.
 - **Responsive Design**: Works seamlessly on both desktop and mobile devices.
 - **Error Handling**: Displays appropriate messages for invalid locations or API errors.
@@ -37,38 +25,10 @@ This is a **weather application** built using [Next.js](https://nextjs.org). The
 ## Getting Started
 
 To run this project locally, follow these steps:
-<<<<<<< HEAD
-
-### 1. Clone the Repository
-
-```bash
-git clone [https://github.com/coffeesama/weatherapp.git]
-cd your-repo
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
-
-### 3. Set Up Environment Variables
-
-Rename the `.env.example` file to `.env` and fill in the required API keys and configuration settings. This file contains environment-specific variables such as API keys for fetching weather data.
-
-### 4. Run the Development Server
-=======
->>>>>>> ab72d8aac2c82ae0a78ba0226d8fcd5092667d51
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/coffeesama/weatherapp.git]
+git clone https://github.com/coffeesama/weatherapp.git
 cd your-repo
 ```
 
@@ -84,7 +44,7 @@ bun install
 ```
 
 ### 3. Set Up Environment Variables
-Rename the `.env.example` file to `.env` and fill in the required API keys and configuration settings. This file contains environment-specific variables such as API keys for fetching weather data.
+Rename the `.env.example` file to `.env.local` and fill in the required API keys and configuration settings. This file contains environment-specific variables such as API keys for fetching weather data.
 
 ### 4. Run the Development Server
 ```bash
@@ -99,14 +59,20 @@ bun dev
 
 Now, open [http://localhost:3000](http://localhost:3000) in your browser to see the application in action.
 
-<<<<<<< HEAD
 ---
 
-=======
+## Project Structure
+```plaintext
+📂 src
+ ┣ 📂 app             # App folder
+ ┣ 📂 components      # Reusable UI components
+ ┣ 📂 contexts        # Global state management
+ ┣ 📂 models          # Data models
+ ┣ 📂 actions         # API and business logic
+```
 
 ---
 
->>>>>>> ab72d8aac2c82ae0a78ba0226d8fcd5092667d51
 ## Deployment
 
 The easiest way to deploy this Next.js application is via [Vercel](https://vercel.com/), the platform built by the creators of Next.js.
@@ -127,19 +93,11 @@ To explore more about Next.js, refer to these resources:
 
 ---
 
+
 ## License
-<<<<<<< HEAD
-
-This project is open-source and available under the **MIT License**.
-
----
-
-Made with ❤️ using Next.js.
-=======
 This project is open-source and available under the **MIT License**.
 
 ---
 
 Made with ❤️ using Next.js.
 
->>>>>>> ab72d8aac2c82ae0a78ba0226d8fcd5092667d51
