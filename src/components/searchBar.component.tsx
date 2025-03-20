@@ -19,7 +19,7 @@ export default function SearchBar() {
       />
       <button className="w-[10%] border-0 bg-transparent p-0 cursor-pointer flex items-center justify-center">
         <Image
-          src="/searchBtn.png"
+          src="/searchbtn.png"
           alt="Search"
           width={100}
           height={100}
