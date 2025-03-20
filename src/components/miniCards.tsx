@@ -2,6 +2,15 @@
 import Image from "next/image";
 import { useWeather } from "../contexts/weatherContext";
 
+function formatUnixTimestamp(timestamp: any) {
+  const date = new Date(timestamp * 1000);
+  return date.toLocaleTimeString("tr-TR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+}
+
 export default function MiniCards() {
   const { weather } = useWeather();
   return (
@@ -75,7 +84,7 @@ export default function MiniCards() {
               Sunrise
             </div>
             <div className="text-white text-[16px] font-light">
-              {weather?.sys.sunrise}
+              {formatUnixTimestamp(weather?.sys.sunrise)}
             </div>
           </div>
           {/* Sunrise Card End */}
@@ -90,7 +99,7 @@ export default function MiniCards() {
             />
             <div className="text-white text-[16px] font-extralight">Sunset</div>
             <div className="text-white text-[16px] font-light">
-              {weather?.sys.sunset}
+              {formatUnixTimestamp(weather?.sys.sunset)}
             </div>
           </div>
           {/* Sunset Card End */}
