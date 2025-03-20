@@ -5,12 +5,14 @@ This is a **weather application** built using [Next.js](https://nextjs.org). The
 ## Preview
 
 ### Desktop View
-![Demo](https://github.com/user-attachments/assets/dca4ae0a-2a0b-4214-bc7a-64e1325a29bd)
-![Demo Error](https://github.com/user-attachments/assets/5d264b8c-888c-4113-a308-c70870cb0de7)
+![Desktop Demo](https://github.com/user-attachments/assets/b0405a15-36c5-4645-b822-a1e6ddb4ab19)
+![Desktop Error Demo](https://github.com/user-attachments/assets/112778cf-af85-465a-96d8-1720aecbc832)
+
 
 ### Mobile View
-![Demo Phone](https://github.com/user-attachments/assets/ffd3d494-d935-42fc-88ba-bfc3e5eafd8b)
-![Demo Error Phone](https://github.com/user-attachments/assets/2cd77a62-ccf2-4f6d-8df6-4874b76acadb)
+![Mobile Demo](https://github.com/user-attachments/assets/fe7b49ed-9f9b-43d0-846e-0470652d89f0)
+![Mobile Error Demo](https://github.com/user-attachments/assets/181cf31d-b01f-4c93-b872-6f8fac41cb34)
+
 
 ---
 
