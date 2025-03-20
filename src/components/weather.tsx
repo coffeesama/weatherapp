@@ -1,19 +1,24 @@
+"use client";
 import Image from "next/image";
+import { useWeather } from "../contexts/weatherContext";
 
 export default function Weather() {
+  const { weather } = useWeather();
   return (
     <div className="w-[800px] h-max flex flex-col gap-[40px] justify-center items-center rounded-4xl">
       {/* Weather Name Section Start */}
       <div className="w-max h-max text-[30px] text-white font-semibold text-center flex flex-row items-center justify-center gap-4">
         <div className="flex flex-row items-center gap-1">
           <Image
-            src="/cloudy.png"
-            alt="Cloudy"
+            src={`https://openweathermap.org/img/wn/${
+              weather?.weather[0]?.icon || "10d"
+            }@2x.png`}
+            alt={weather?.weather[0]?.description || "Weather Icon"}
             width={200}
             height={200}
             className="w-[40px] h-[40px]"
           />
-          <div className="">Rainy</div>
+          <div className="">{weather?.weather[0].description}</div>
         </div>
         <div className="flex flex-row items-center gap-1">
           <Image
@@ -24,11 +29,11 @@ export default function Weather() {
             className="w-[30px] h-[30px]"
           />
           <div className="w-max h-max text-[20px] text-white font-light text-center">
-            3°C
+            {weather?.main.temp}°C
           </div>
           <div className="w-max h-max text-[12px] text-white font-extralight text-center flex flex-col justify-center items-center">
             <div className="up flex gap-1">
-              8°C
+              {weather?.main.temp_max}°C
               <Image
                 src="/uparrow.png"
                 alt="uparrow"
@@ -38,7 +43,7 @@ export default function Weather() {
               />
             </div>
             <div className="down flex gap-1">
-              1°C
+              {weather?.main.temp_min}°C
               <Image
                 src="/downarrow.png"
                 alt="downarrow"

@@ -1,6 +1,8 @@
+"use client";
 import SearchBar from "@/components/searchBar";
 import MiniCards from "@/components/miniCards";
 import Weather from "@/components/weather";
+import { useWeather } from "../contexts/weatherContext";
 import { Inter, Instrument_Serif } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
@@ -22,6 +24,8 @@ export default function Home() {
 
   const lowerCaseFormat = formattedDate.replace("AM", "am").replace("PM", "pm");
 
+  const { weather } = useWeather();
+  console.log(weather);
   return (
     <div
       className={`${inter.className} min-h-screen bg-black p-4 flex items-center justify-center relative`}
@@ -34,7 +38,7 @@ export default function Home() {
           <header
             className={`${instrumentSerif.className} w-max text-white text-[64px] font-black`}
           >
-            Kocaeli, TR
+            {weather?.name}
           </header>
           <div>
             <SearchBar />

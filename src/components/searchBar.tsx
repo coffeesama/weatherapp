@@ -1,13 +1,9 @@
 "use client";
-import { getWeatherData } from "@/app/actions";
+import { useWeather } from "../contexts/weatherContext";
 import Image from "next/image";
 
 export default function SearchBar() {
-  const handleSearch = async (formData: FormData) => {
-    const city = formData.get("city") as string;
-    const { data }: any = await getWeatherData(city);
-    console.log(data);
-  };
+  const { handleSearch } = useWeather();
 
   return (
     <form

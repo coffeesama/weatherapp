@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useWeather } from "../contexts/weatherContext";
 
 export default function MiniCards() {
+  const { weather } = useWeather();
   return (
     <div className="w-[800px] h-max flex flex-col gap-[40px] justify-center items-center">
       {/* Cards Section Start */}
@@ -18,7 +21,9 @@ export default function MiniCards() {
             <div className="text-white text-[16px] font-extralight">
               Feels Like
             </div>
-            <div className="text-white text-[16px] font-light">3°C</div>
+            <div className="text-white text-[16px] font-light">
+              {weather?.main.feels_like}°C
+            </div>
           </div>
           {/* Temperature Card End */}
           {/* Humidity Card Start */}
@@ -33,7 +38,9 @@ export default function MiniCards() {
             <div className="text-white text-[16px] font-extralight">
               Humidity
             </div>
-            <div className="text-white text-[16px] font-light">91%</div>
+            <div className="text-white text-[16px] font-light">
+              {weather?.main.humidity}%
+            </div>
           </div>
           {/* Humidity Card End */}
           {/* Wind Card Start */}
@@ -46,7 +53,9 @@ export default function MiniCards() {
               className="w-[40px] h-[40px]"
             />
             <div className="text-white text-[16px] font-extralight">Wind</div>
-            <div className="text-white text-[16px] font-light">5 m/s</div>
+            <div className="text-white text-[16px] font-light">
+              {weather?.wind.speed}m/s
+            </div>
           </div>
           {/* Wind Card End */}
         </div>
@@ -65,7 +74,9 @@ export default function MiniCards() {
             <div className="text-white text-[16px] font-extralight">
               Sunrise
             </div>
-            <div className="text-white text-[16px] font-light">7:34 am</div>
+            <div className="text-white text-[16px] font-light">
+              {weather?.sys.sunrise}
+            </div>
           </div>
           {/* Sunrise Card End */}
           {/* Sunset Card Start */}
@@ -78,7 +89,9 @@ export default function MiniCards() {
               className="w-[40px] h-[40px]"
             />
             <div className="text-white text-[16px] font-extralight">Sunset</div>
-            <div className="text-white text-[16px] font-light">8:11 pm</div>
+            <div className="text-white text-[16px] font-light">
+              {weather?.sys.sunset}
+            </div>
           </div>
           {/* Sunset Card End */}
         </div>
