@@ -4,7 +4,7 @@ import { WeatherData } from "@/models/weatherdata.model";
 
 export async function getWeatherData(
   city: string
-): Promise<{ data?: WeatherData }> {
+): Promise<{ data: WeatherData } | { error: { message: string } }> {
   try {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.OPENWEATHERMAP_API_KEY}`
@@ -29,6 +29,6 @@ export async function getWeatherData(
     return { data };
   } catch (error) {
     console.log(error);
-    return {};
+    return { error: { message: "Failed to fetch weather data." } };
   }
 }

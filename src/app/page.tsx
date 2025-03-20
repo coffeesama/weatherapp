@@ -7,7 +7,11 @@ import { Inter, Instrument_Serif } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
-const instrumentSerif = Instrument_Serif({ weight: "400" });
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  preload: true,
+});
 
 export default function Home() {
   const currentDate = new Date();

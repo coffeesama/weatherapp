@@ -2,12 +2,10 @@
 import Image from "next/image";
 import { useWeather } from "../contexts/weatherContext.context";
 
-function formatUnixTimestamp(timestamp: any) {
-  const date = new Date(timestamp * 1000);
+function formatUnixTimestamp(timestamp?: number) {
+  if (!timestamp) return ""; // Handle undefined values safely
 
-  if (date.toLocaleDateString() == "Invalid Date") {
-    return "";
-  }
+  const date = new Date(timestamp * 1000);
   return date.toLocaleTimeString("tr-TR", {
     hour: "2-digit",
     minute: "2-digit",
@@ -35,7 +33,7 @@ export default function MiniCards() {
               Feels Like
             </div>
             <div className="text-white text-[16px] font-light">
-              {weather?.main.feels_like}°C
+              {weather?.main.feels_like ?? "--"}°C
             </div>
           </div>
           {/* Temperature Card End */}
@@ -52,7 +50,7 @@ export default function MiniCards() {
               Humidity
             </div>
             <div className="text-white text-[16px] font-light">
-              {weather?.main.humidity}%
+              {weather?.main.humidity ?? "--"}%
             </div>
           </div>
           {/* Humidity Card End */}
@@ -67,7 +65,7 @@ export default function MiniCards() {
             />
             <div className="text-white text-[16px] font-extralight">Wind</div>
             <div className="text-white text-[16px] font-light">
-              {weather?.wind.speed}m/s
+              {weather?.wind.speed ?? "--"}m/s
             </div>
           </div>
           {/* Wind Card End */}
@@ -88,7 +86,7 @@ export default function MiniCards() {
               Sunrise
             </div>
             <div className="text-white text-[16px] font-light">
-              {formatUnixTimestamp(weather?.sys.sunrise)}
+              {formatUnixTimestamp(weather?.sys.sunrise) ?? "--"}
             </div>
           </div>
           {/* Sunrise Card End */}
@@ -103,7 +101,7 @@ export default function MiniCards() {
             />
             <div className="text-white text-[16px] font-extralight">Sunset</div>
             <div className="text-white text-[16px] font-light">
-              {formatUnixTimestamp(weather?.sys.sunset)}
+              {formatUnixTimestamp(weather?.sys.sunset) ?? "--"}
             </div>
           </div>
           {/* Sunset Card End */}

@@ -5,6 +5,7 @@ import {
   useContext,
   ReactNode,
   useEffect,
+  useRef,
 } from "react";
 import { WeatherData } from "@/models/weatherdata.model";
 import { getWeatherData } from "@/actions/actions.action";
@@ -24,12 +25,16 @@ export const WeatherProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const initialLoadDone = useRef(false);
 
-  // Sayfa yüklendiğinde New York verisini çek
   useEffect(() => {
     const fetchDefaultWeather = async () => {
       try {
-        const { data, error }: any = await getWeatherData("New York");
+        const {
+          data,
+          error,
+        }: { data?: WeatherData; error?: { message: string } } =
+          await getWeatherData("New York");
 
         if (error) {
           setError(error.message || "Default City Error.");
@@ -38,29 +43,34 @@ export const WeatherProvider: React.FC<{ children: ReactNode }> = ({
           setWeather(data);
           setError(null);
         }
-      } catch (err) {
-        setError("Error.");
+      } catch (error: unknown) {
+        const errorMessage =
+          error instanceof Error ? error.message : String(error);
+        setError(`Error: ${errorMessage}`);
         setWeather(null);
       }
     };
 
-    // Eğer weather null ise New York verisini çek
-    if (!weather) {
+    if (!initialLoadDone.current) {
       fetchDefaultWeather();
+      initialLoadDone.current = true;
     }
   }, []);
 
   const handleSearch = async (formData: FormData) => {
-    const city = formData.get("city") as string;
+    const city = formData.get("city")?.toString().trim();
 
-    // Şehir alanı boş olmamalı
-    if (!city || city.trim() === "") {
+    if (!city) {
       setError("Please enter a city name.");
       return;
     }
     try {
-      setError(null); // Önceki hataları temizle
-      const { data, error }: any = await getWeatherData(city);
+      setError(null);
+      const {
+        data,
+        error,
+      }: { data?: WeatherData; error?: { message: string } } =
+        await getWeatherData(city);
 
       if (error) {
         setError(error.message || `"${city}" city is not found.`);
@@ -72,8 +82,10 @@ export const WeatherProvider: React.FC<{ children: ReactNode }> = ({
         setError(`"${city}" city has not have a weather data.`);
         setWeather(null);
       }
-    } catch (err) {
-      setError("Error.");
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
+      setError(`Error: ${errorMessage}`);
       setWeather(null);
     }
   };
