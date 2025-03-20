@@ -13,12 +13,12 @@ export async function getWeatherData(
       // HTTP hatası durumunda
       if (res.status === 404) {
         return {
-          data: null,
-          error: { message: `"${city}" is not found.` },
+          data: undefined,
+          error: { message: `"${city}" city is not found.` },
         };
       }
       return {
-        data: null,
+        data: undefined,
         error: {
           message: `Weather data error: ${res.statusText}`,
         },

@@ -17,7 +17,7 @@ export default function MiniCards() {
     <div className="w-[800px] h-max flex flex-col gap-[40px] justify-center items-center">
       {/* Cards Section Start */}
       <div className="top">
-        <div className="w-max h-max flex flex-row items-center justify-center gap-[150px]">
+        <div className="w-max h-max flex flex-row items-center justify-center gap-[30px] md:gap-[100px] lg:gap-[150px]">
           {/* Temperature Card Start */}
           <div className="w-[75px] h-max flex flex-col items-center justify center gap-[3px]">
             <Image

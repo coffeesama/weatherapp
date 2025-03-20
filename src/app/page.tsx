@@ -28,7 +28,7 @@ export default function Home() {
   console.log(weather);
   return (
     <div
-      className={`${inter.className} min-h-screen bg-black p-4 flex items-center justify-center relative`}
+      className={`${inter.className} min-h-screen min-w-screen bg-black p-4 flex items-center justify-center relative`}
     >
       <div className="w-full max-w-md flex gap-[60px] items-center justify-center flex-col">
         <div className="flex items-center justify-between flex-col gap-[40px]">
@@ -36,7 +36,7 @@ export default function Home() {
             {lowerCaseFormat}
           </div>
           <header
-            className={`${instrumentSerif.className} w-max text-white text-[64px] font-black`}
+            className={`${instrumentSerif.className} w-max text-white text-[40px] md:text-[64px] lg:text-[64px] font-black`}
           >
             {weather?.name}
           </header>

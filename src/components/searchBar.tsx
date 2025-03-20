@@ -8,7 +8,7 @@ export default function SearchBar() {
   return (
     <form
       action={handleSearch}
-      className="w-[800px] h-[40px] bg-white flex flex-row justify-center items-center rounded-4xl"
+      className="w-[200px] md:w-[600px] lg:w-[800px] h-[40px] bg-white flex flex-row justify-center items-center rounded-4xl"
     >
       <input
         type="text"

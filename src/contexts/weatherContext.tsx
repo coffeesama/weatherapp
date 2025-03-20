@@ -58,7 +58,6 @@ export const WeatherProvider: React.FC<{ children: ReactNode }> = ({
       setError("Please enter a city name.");
       return;
     }
-
     try {
       setError(null); // Önceki hataları temizle
       const { data, error }: any = await getWeatherData(city);
