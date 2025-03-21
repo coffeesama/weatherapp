@@ -16,7 +16,7 @@ function formatUnixTimestamp(timestamp?: number) {
 export default function MiniCards() {
   const { weather } = useWeather();
   return (
-    <div className="w-[800px] h-max flex flex-col gap-[40px] justify-center items-center">
+    <div className="w-[800px] h-max flex flex-col gap-[10px] lg:gap-[40px] justify-center items-center">
       {/* Cards Section Start */}
       <div className="top">
         <div className="w-max h-max flex flex-row items-center justify-center gap-[30px] md:gap-[80px] lg:gap-[100px]">
@@ -72,7 +72,7 @@ export default function MiniCards() {
         </div>
       </div>
       <div className="bottom">
-        <div className="w-max h-max flex flex-row items-center justify-center gap-[80px]">
+        <div className="w-max h-max flex flex-row items-center justify-center gap-[30px] md:gap-[80px] lg:gap-[80px]">
           {/* Sunrise Card Start */}
           <div className="w-[75px] h-max flex flex-col items-center justify center gap-[3px]">
             <Image

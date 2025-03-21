@@ -32,34 +32,30 @@ export default function Home() {
   console.log(weather);
   return (
     <div
-      className={`${inter.className} min-h-screen min-w-screen bg-black p-4 flex items-center justify-center relative`}
+      className={`${inter.className} min-h-screen min-w-screen overflow-hidden bg-black p-4 flex items-center justify-center flex-col gap-[30px] md:gap-[40px] lg:gap-[50px] relative`}
     >
-      <div className="w-full max-w-md flex gap-[60px] items-center justify-center flex-col">
-        <div className="flex items-center justify-between flex-col gap-[40px]">
-          <div className="w-max text-white text-[16px] font-light">
-            {lowerCaseFormat}
-          </div>
-          <header
-            className={`${instrumentSerif.className} w-max text-white text-[40px] md:text-[64px] lg:text-[64px] font-black`}
-          >
-            {weather?.name}
-          </header>
-          <div>
-            <SearchBar />
-          </div>
-          <main>
-            <Weather />
-          </main>
-          <div>
-            <MiniCards />
-          </div>
-          <footer
-            className={`${instrumentSerif.className} w-max text-white text-[16px] font-light opacity-30 absolute bottom-4 left-1/2 transform -translate-x-1/2`}
-          >
-            Made By. Yusuf Eren Elmas
-          </footer>
-        </div>
+      <div className="w-max text-white text-[16px] font-light">
+        {lowerCaseFormat}
       </div>
+      <header
+        className={`${instrumentSerif.className} w-max text-white text-[40px] md:text-[64px] lg:text-[64px] font-black`}
+      >
+        {weather?.name}
+      </header>
+      <div>
+        <SearchBar />
+      </div>
+      <main>
+        <Weather />
+      </main>
+      <div>
+        <MiniCards />
+      </div>
+      <footer
+        className={`${instrumentSerif.className} w-max text-white text-[16px] font-light opacity-30 absolute bottom-4 left-1/2 transform -translate-x-1/2`}
+      >
+        Made By. Yusuf Eren Elmas
+      </footer>
     </div>
   );
 }

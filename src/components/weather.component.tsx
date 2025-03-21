@@ -14,7 +14,7 @@ export default function Weather() {
   }
   return (
     <div className="w-[800px] h-max flex flex-col gap-[40px] justify-center items-center rounded-4xl">
-      {/* Weather Name Section Start */}
+      {/* Weather Section Start */}
       <div className="w-max h-max text-[30px] text-white font-semibold text-center flex flex-col md:flex-row lg:flex-row items-center justify-center gap-4">
         <div className="flex flex-row items-center gap-1">
           <Image
@@ -63,7 +63,7 @@ export default function Weather() {
           </div>
         </div>
       </div>
-      {/* Weather Name Section End */}
+      {/* Weather Section End */}
     </div>
   );
 }
