@@ -60,6 +60,8 @@ export const WeatherProvider: React.FC<{ children: ReactNode }> = ({
   const handleSearch = async (formData: FormData) => {
     const city = formData.get("city")?.toString().trim();
 
+    console.log({ weather, setWeather, error, setError, handleSearch });
+
     if (!city) {
       setError("Please enter a city name.");
       return;
